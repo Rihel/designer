@@ -1,0 +1,19 @@
+.component-item-wrapper {
+  min-height: 50px;
+
+  .not-widget {
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+    border: 1px solid #eee;
+  }
+
+  .component-item {
+    &:hover {
+      outline: 1px solid blue;
+    }
+  }
+}
