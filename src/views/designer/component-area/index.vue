@@ -1,21 +1,17 @@
 <template>
-  <draggable
-    class="list-group"
+  <draggable class="list-group"
     v-model="componentList"
     v-bind="componentDraggableOptions"
     @start="startHandler"
-    @clone="cloneHandler"
-  >
-    <li
-      class="list-item"
+    @clone="cloneHandler">
+    <li class="list-item"
       v-for="item in componentList"
-      :key="item.id"
-    >{{item.name}}</li>
+      :key="item.component">{{item.label}}</li>
   </draggable>
 </template>
 
 <script>
-import ComponentList from "./componentList";
+import ComponentList from './componentList'
 
 export default {
   data() {
@@ -23,26 +19,26 @@ export default {
       componentDraggableOptions: {
         animation: 200,
         group: {
-          name: "people",
-          pull: "clone",
+          name: 'people',
+          pull: 'clone',
           put: false
         },
         sort: false,
         disabled: false,
-        ghostClass: "ghost"
+        ghostClass: 'ghost'
       },
       componentList: ComponentList
-    };
+    }
   },
   methods: {
     startHandler(evt) {
-      console.log(evt);
+      console.log(evt)
     },
     cloneHandler(evt) {
-      console.log("clone", evt);
+      console.log('clone', evt)
     }
   }
-};
+}
 </script>
 
 <style>

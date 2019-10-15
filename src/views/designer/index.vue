@@ -2,12 +2,11 @@
   <el-container class="designer">
     <el-aside class="designer-components">
       <component-area></component-area>
+      {{widgetSelect}}
     </el-aside>
     <el-main class="designer-canvas">
-      <main-canvas
-        :select.sync="widgetSelect"
-        :config="configData"
-      ></main-canvas>
+      <main-canvas :select.sync="widgetSelect"
+        :config="configData"></main-canvas>
     </el-main>
     <el-aside class="designer-config">
       <config-area :data="configData"></config-area>
@@ -16,11 +15,11 @@
 </template>
 
 <script>
-import ComponentArea from "./component-area";
-import MainCanvas from "./main-canvas";
-import ConfigArea from "./config-area";
+import ComponentArea from './component-area'
+import MainCanvas from './main-canvas'
+import ConfigArea from './config-area'
 export default {
-  name: "designer",
+  name: 'designer',
   components: {
     ComponentArea,
     MainCanvas,
@@ -30,15 +29,15 @@ export default {
     return {
       widgetSelect: null,
       configData: {
-        labelPosition: "",
+        labelPosition: '',
         labelWidth: 10,
-        size: "mini"
+        size: 'mini'
       }
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
-@import "./style.scss";
+@import './style.scss';
 </style>

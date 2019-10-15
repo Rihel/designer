@@ -1,5 +1,20 @@
+$general-color: rgb(7, 122, 242);
+
+$container-color: rgb(221, 175, 25);
+
+$bg-opacity: .1;
+
 .component-item-wrapper {
   min-height: 50px;
+  width: 100%;
+
+  .component-ghost {
+    // opacity: .5;
+    // font-size: 0;
+    min-width: 5px;
+    ;
+    background-color: red;
+  }
 
   .not-widget {
     height: 50px;
@@ -12,8 +27,42 @@
   }
 
   .component-item {
-    &:hover {
-      outline: 1px solid blue;
+    padding: 10px;
+    position: relative;
+
+    &.is-container {
+      min-height: 10px;
+      border: 1px dashed #ddd;
+      background-color: rgba(221, 175, 25, 0.1);
+
+      &:hover {
+        outline: 1px solid rgb(221, 175, 25);
+      }
+    }
+
+    background-color: rgba(7, 112, 242, .1);
+
+
+  }
+
+  .component-item-inner {
+    position: relative;
+
+    .component-operations {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $general-color;
+      color: #fff;
+
+      i {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
     }
   }
 }
